@@ -26,7 +26,27 @@
         - 콜백 문제점, Future 조합 문제점, 동시성 문제점 해결을 위한 라이브러리
 ## Observable
 
+1. Observalbe 클래스 
 
+   - Observer 패턴을 구현 
+
+     1. 객체의 상태 변화를 관찰하는 관찰자(Observer) 목록을 객체로 등록
+     2. 상태 변화가 있을 때마다 메소드를 호출하여 객체가 직접 목록의 각 Observer에게 변화를 알려준다.
+
+     - onNext : Observable이 데이터의 발행을 알림
+     - onComplete : 모든 데이터의 발행을 완료함을 알림, 한 번만 발생, onComplete 이후에는 onNext가 발생해서는 안 된다.
+     - onError : Observable에서 에러가 발생함을 알림. onError 이후 onNext와 onComplete 이벤트가 발생하지 않는다. = Observable의 실행 종료
+
+   1. just() : 인자로 넣은 데이터를 차례로 발행하기 위해서 Observable를 생성
+
+      ```kotlin
+       Observable.just(1, 2, 3, 4, 5).subscribe(System.out::println);
+       // 실제 데이터의 발행은 subscribe() 함수 호출
+      ```
+
+   2. subscribe() / Disposable
+
+      - subscribe() : 내가 동작시키기 원하는 것을 사전에 정의한 후 다음 실제로 그것이 실행되는 시점을 정의해주는 함수.
 
 ## Reactive Operator
 
