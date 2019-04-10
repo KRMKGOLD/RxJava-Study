@@ -16,7 +16,7 @@
 
 ## Schelduer
 
-[Schelduer](https://github.com/KRMKGOLD/studyRxJava/tree/master/Schelduer) 폴더 참고.
+[Schelduer](https://github.com/KRMKGOLD/studyRxJava/tree/master/Schelduler) 폴더 참고.
 
 ## RxAndroid
 
