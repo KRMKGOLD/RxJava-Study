@@ -111,4 +111,42 @@
        source.subscribe(System.out::println);
       ```
 
-## 
+2. Single 클래스 : Observable의 특수한 형태로, 오직 한 개의 데이터만 발행할 수 있게 한정.
+
+   - 데이터 하나가 발행되는 순간 종료된다 (onSuccess). 
+     - onSuccess() = onNext() + onComplete()
+     - Single LifeCycle : onSuccess(T value) , onError()
+
+   1. just() : Observable과 비슷한 방법.
+
+      ```
+       Single<String> source = Single.just("Hello Single!");
+       source.subscribe(System.out::println);
+      ```
+
+   2. Observable과 Single
+
+      - Single은 Observable의 특수한 형태이므로 Observable를 Single로 변환시킬 수 있다.
+
+        Observable<String> source = Observable.just("Hello Single"); Single.fromObservable(source).subscribe(System.out::println);
+
+        Observable.just("Hello Single").single("default item") .subscribe(System.out::println);
+
+        Single.fromObservable; Observable.just().single; Observable.fromArray().first; Observable.empty().single;
+
+3. Maybe 클래스 : Single 클래스와 마찬가지로 데이터 하나만 가진다
+
+   - 데이터 발행 없이 바로 데이터 발생을 완료할 수도 있다.
+   - Maybe = Single + onComplete()
+   - elementAt(), firstElement(), flatMapMaybe(), lastElement(), reduce(), singleElement() ...
+   - 자세한 내용은 Reactive Operator에서.
+
+4. Hot Observables / Cold Observables
+
+   - Observable에는 뜨거운 Observable과 차가운 Observable이 있다.
+   - 차가운 Observable : Observer가 .subscribe()를 호출해 구독하지 않으면 데이터를 발행하지 않는, lazy 접근법에 해당하는 Observable. 
+     - 웹 요청, DB 쿼리, 파일 읽기 ...
+   - 뜨거운 Observable : 구독자에 신경쓰지 않고 데이터를 발행하는 Observable 
+     - 여러 구독자를 고려할 수 있음.
+     - 단 구독자는 Observable에서 발행하는 내용이 처음부터 모두 수신되었는지 확신할 수 없음.
+     - 마우스 이벤트, 키보드 이벤트, 시싀템 이벤트, 센서 데이터, 주식 가격..
