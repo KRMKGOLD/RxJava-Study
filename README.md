@@ -4,24 +4,26 @@
 
 ## Reactive Programming
 
-[Reactive Programming](https://github.com/KRMKGOLD/studyRxJava/tree/master/Reactive%20Programming) 폴더 참고.
+[Reactive Programming](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Reactive_Programming)
 
-## Observable.Observable
+## Observable
 
-[Observable.Observable](https://github.com/KRMKGOLD/studyRxJava/tree/master/Observable.Observable) 폴더 참고.
+[Observable](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Observable)
 
 ## Reactive Operator
 
-[Reactive Operator - 1](https://github.com/KRMKGOLD/studyRxJava/tree/master/Reactive%20Operator%20-%201), [Reactive Operator - 2](https://github.com/KRMKGOLD/studyRxJava/tree/master/Reactive%20Operator%20-%202) 폴더 참고.
+[Reactive Operator - 1](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Reactive_Operator_1)
+
+[Reactive Operator - 2](https://github.com/KRMKGOLD/studyRxJava/tree/master/Reactive%20Operator%20-%202)
 
 ## Schelduer
 
-[Schelduer](https://github.com/KRMKGOLD/studyRxJava/tree/master/Schelduler) 폴더 참고.
+[Schelduer](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Schelduler)
 
 ## RxAndroid
 
-[RxAndroid](https://github.com/KRMKGOLD/studyRxJava/tree/master/RxAndroid) 폴더 참고.
+[RxAndroid](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/RxAndroid)
 
 ## Testing & Flowable
 
-[Testing & Flowable](https://github.com/KRMKGOLD/studyRxJava/tree/master/Testing%20&%20Flowable) 폴더 참고.
+[Testing & Flowable](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Testing_Flowable) 폴더 참고.
