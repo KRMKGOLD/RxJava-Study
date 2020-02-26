@@ -209,7 +209,7 @@
          - 가능한 이유
 
            ```java
-           import Observable.Observable;public abstract class Subject<T> extends Observable<T> implements Observer<T>
+           public abstract class Subject<T> extends Observable<T> implements Observer<T>
            ```
 
          - Subject가 Observable과 Observer를 둘 다 상속받고 있기 때문에 가능하다.
