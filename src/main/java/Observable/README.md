@@ -1,4 +1,4 @@
-# Observable
+# Observable.Observable
 
 1. Observalbe 클래스
 
@@ -14,7 +14,7 @@
    1. just() : 인자로 넣은 데이터를 차례로 발행하기 위해서 Observable를 생성
 
       ```java
-       Observable.just(1, 2, 3, 4, 5).subscribe(System.out::println);
+       Observable.Observable.just(1, 2, 3, 4, 5).subscribe(System.out::println);
        // 실제 데이터의 발행은 subscribe() 함수 호출
       ```
 
@@ -27,7 +27,7 @@
    3. create() : just() 함수와 다르게 onNext, onComplete, onError를 개발자가 직접 선언해줘야 함
 
       ```java
-       Observable<Integer> observable = Observable.create(
+       Observable.Observable<Integer> observable = Observable.Observable.create(
                        (ObservableEmitter<Integer> emitter) -> {
                            emitter.onNext(100);
                            emitter.onNext(200);
@@ -52,7 +52,7 @@
       - RxJava 2에서는 from()을 세분화해서 사용
 
         ```java
-        Integer[] intArray = {400, 500, 600, 700}; Observable.fromArray(intArray).subscribe(System.out::println);
+        Integer[] intArray = {400, 500, 600, 700}; Observable.Observable.fromArray(intArray).subscribe(System.out::println);
         ```
 
    5. fromIterable() : Iterator 인터페이스를 구현한 클래스에서 선언
@@ -80,7 +80,7 @@
         ```java
         List<String> names = new ArrayList<>(); names.add("Jerry"); names.add("William"); names.add("Bob");
         
-        Observable<String> source = Observable.fromIterable(names); source.subscribe(System.out::println);
+        Observable.Observable<String> source = Observable.Observable.fromIterable(names); source.subscribe(System.out::println);
         ```
 
       - HastSet, BlockingQueue로도 같은 방식으로 만들 수 있음
@@ -93,7 +93,7 @@
        	return "Hello Callable";
        }
        
-       Observable<String> source = Observable.fromCallable(callable);
+       Observable.Observable<String> source = Observable.Observable.fromCallable(callable);
        source.subscribe(System.out::println);
        
        // use lambda
@@ -106,7 +106,7 @@
         ```java
         Future<String> future = Executors.newSingleThreadExecutor().submit(() -> { Thread.sleep(1000); return "Hello Future"; });
         
-        Observalbe<String> source = Observable.fromFuture(future); source.subscribe(System.out::println);
+        Observalbe<String> source = Observable.Observable.fromFuture(future); source.subscribe(System.out::println);
         ```
 
       - Executors 클래스의 newSingleThreadExecutor() 메서드에 람다 표현식의 Callable 객체를 인자로 넣었다.
@@ -115,11 +115,11 @@
 
       ```java
        Publisher<String> publisher = (Subscriber<? super String> s) -> {
-       	s.onNext("Hello Observable.fromPublisher()");
+       	s.onNext("Hello Observable.Observable.fromPublisher()");
        	s.onComplete();
        };
        
-       Observable<String> source = Observable.fromPublisher(publisher);
+       Observable.Observable<String> source = Observable.Observable.fromPublisher(publisher);
        source.subscribe(System.out::println);
       ```
 
@@ -141,16 +141,16 @@
       - Single은 Observable의 특수한 형태이므로 Observable를 Single로 변환시킬 수 있다.
 
         ```java
-        Observable<String> source = Observable.just("Hello Single");
+        Observable.Observable<String> source = Observable.Observable.just("Hello Single");
         Single.fromObservable(source).subscribe(System.out::println);
         
-        Observable.just("Hello Single").single("default item")
+        Observable.Observable.just("Hello Single").single("default item")
         	.subscribe(System.out::println);
         
         Single.fromObservable;
-        Observable.just().single;
-        Observable.fromArray().first;
-        Observable.empty().single;
+        Observable.Observable.just().single;
+        Observable.Observable.fromArray().first;
+        Observable.Observable.empty().single;
         ```
 
    3. Maybe 클래스 : Single 클래스와 마찬가지로 데이터 하나만 가진다
@@ -163,9 +163,9 @@
    4. Hot Observables / Cold Observables
 
       - Observable에는 뜨거운 Observable과 차가운 Observable이 있다.
-      - 차가운 Observable : Observer가 .subscribe()를 호출해 구독하지 않으면 데이터를 발행하지 않는, lazy 접근법에 해당하는 Observable. 
+      - 차가운 Observable.Observable : Observer가 .subscribe()를 호출해 구독하지 않으면 데이터를 발행하지 않는, lazy 접근법에 해당하는 Observable.Observable. 
         - 웹 요청, DB 쿼리, 파일 읽기 ...
-      - 뜨거운 Observable : 구독자에 신경쓰지 않고 데이터를 발행하는 Observable 
+      - 뜨거운 Observable.Observable : 구독자에 신경쓰지 않고 데이터를 발행하는 Observable.Observable 
         - 여러 구독자를 고려할 수 있음.
         - 단 구독자는 Observable에서 발행하는 내용이 처음부터 모두 수신되었는지 확신할 수 없음.
         - 마우스 이벤트, 키보드 이벤트, 시싀템 이벤트, 센서 데이터, 주식 가격..
@@ -195,7 +195,7 @@
 
            ```java
            Float[] temperature = {10.1f, 13.4f, 12.5f};
-           Observable<Float> source = Observable.fromArray(temperature);
+           Observable.Observable<Float> source = Observable.Observable.fromArray(temperature);
            
            AsyncSubject<Float> subject = AsyncSubject.create();
            subject.subscribe(data -> System.out.println("Subscriber #1 => " + data));
@@ -209,7 +209,7 @@
          - 가능한 이유
 
            ```java
-           public abstract class Subject<T> extends Observable<T> implements Observer<T>
+           import Observable.Observable;public abstract class Subject<T> extends Observable<T> implements Observer<T>
            ```
 
          - Subject가 Observable과 Observer를 둘 다 상속받고 있기 때문에 가능하다.
@@ -303,7 +303,7 @@
 
         ```java
         String[] dt = {"1", "3", "5"};
-        Observable<String> balls = Observable.interval(100L, TimeUnit.MILLISECONDS)
+        Observable.Observable<String> balls = Observable.Observable.interval(100L, TimeUnit.MILLISECONDS)
                 .map(Long::intValue)
                 .map(i -> dt[i])
                 .take(dt.length);

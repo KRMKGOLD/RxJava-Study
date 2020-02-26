@@ -9,7 +9,7 @@
    ```java
     String[] balls = {"1", "2", "3"}'
     
-    Observable<String> source = Observable.fromArray(balls)
+    Observable.Observable<String> source = Observable.Observable.fromArray(balls)
     	.map(ball -> ball + "<>");
     source.subscribe(System.out::println);
     
@@ -29,12 +29,12 @@
 
        String[] balls = {"1", "2", "3"};
 
-       Function<String, String> addDiamond = ball -> ball + "<>"; Observable<String> source = Observable.fromArray(balls) .map(addDiamond); source.subscribe(System.out::println);
+       Function<String, String> addDiamond = ball -> ball + "<>"; Observable.Observable<String> source = Observable.Observable.fromArray(balls) .map(addDiamond); source.subscribe(System.out::println);
 
        출력 결과 1<> 2<> 3<>
 
      - 예제 2 : 적절한 숫자 반환
 
-       String[] engs = {"A", "B", "C", "K"}; Function<String, Integer> engToIndex = eng -> { switch (eng) { case "A": return 1; case "B": return 2; case "C": return 3; default: return -1; } }; Observable<Integer> source = Observable.fromArray(engs) .map(engToIndex); source.subscribe(System.out::println);
+       String[] engs = {"A", "B", "C", "K"}; Function<String, Integer> engToIndex = eng -> { switch (eng) { case "A": return 1; case "B": return 2; case "C": return 3; default: return -1; } }; Observable.Observable<Integer> source = Observable.Observable.fromArray(engs) .map(engToIndex); source.subscribe(System.out::println);
 
        출력 결과 1 2 3 -1

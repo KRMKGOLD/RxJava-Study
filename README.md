@@ -6,9 +6,9 @@
 
 [Reactive Programming](https://github.com/KRMKGOLD/studyRxJava/tree/master/Reactive%20Programming) 폴더 참고.
 
-## Observable
+## Observable.Observable
 
-[Observable](https://github.com/KRMKGOLD/studyRxJava/tree/master/Observable) 폴더 참고.
+[Observable.Observable](https://github.com/KRMKGOLD/studyRxJava/tree/master/Observable.Observable) 폴더 참고.
 
 ## Reactive Operator
 
