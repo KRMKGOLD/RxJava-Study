@@ -14,7 +14,7 @@
 
 [Reactive Operator - 1](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Reactive_Operator_1)
 
-[Reactive Operator - 2](https://github.com/KRMKGOLD/studyRxJava/tree/master/Reactive%20Operator%20-%202)
+[Reactive Operator - 2](https://github.com/KRMKGOLD/RxJava-Study/tree/master/src/main/java/Reactive_Operator_2)
 
 ## Schelduer
 
